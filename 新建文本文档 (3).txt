@@ -1,0 +1,199 @@
+choice = input("""请输入你需要的业务：
+1).购买商品；
+2).管理员查询
+输入：""")
+ 
+num_kele = 10
+num_pijiu = 10
+num_naicha = 10
+num_kuangquanshui = 10
+num_kafei = 10
+num_niunai = 10
+ 
+shiyuan = 100
+wuyuan = 100
+liangyuan = 100
+yiyuan = 100
+ 
+while True :
+    if choice == '1' :
+        print (""" 你好，有如下商品可供你选择：
+        1）.可乐       2）.啤酒       3）.奶茶
+        4）.矿泉水     5）.咖啡       6）.牛奶
+        """)
+        choice = input("请输入你要购买商品的序号：")
+        if choice == '1' :
+            num = int(input("你好，可乐一瓶三元，请输入你要购买的数量："))
+            if num <= num_kele :
+                print ("你好，一共%s元。" %(num * 3 ))
+                money = int(input("请将钞票放入入钞口:"))
+                while True :
+                    if money == (num * 3):
+                        num_kele -= num
+                        print("购买成功，欢迎下次光临！")
+                        break
+                    elif money > (num * 3):
+                        num1 = money - (num * 3)
+                        for i in range(yiyuan + 1):
+                            for j in range(liangyuan + 1):
+                                for o in range(wuyuan + 1):
+                                    for p in range(shiyuan + 1):
+                                        if p * 10 + o * 5 + j * 2 + i * 1 == num1:
+                                            print("购买成功，一共找你%s元" %(num1))
+                                            shiyuan -= p
+                                            wuyuan -= o
+                                            liangyuan -= j
+                                            yiyuan -= i
+                                            exit(0)
+                    elif money < (num*3) :
+                        money = int(input("请继续投入现金")) + money
+            if num > num_kele :
+                print ("抱歉，数量不够，请重新输入你要购买的数量！")
+        elif choice == '2' :
+            num = int(input("你好，啤酒一瓶四元，请输入你要购买的数量："))
+            if num <= num_pijiu :
+                print ("你好，一共%s元。" %(num * 4 ))
+                money = int(input("请将钞票放入入钞口:"))
+                if money == (num * 4):
+                    num_pijiu -= num
+                    print("购买成功，欢迎下次光临！")
+                elif money < (num * 4):
+                    num = int(input("请继续投入现金：")) + money
+                elif money > (num * 4):
+                    num1 = money - (num * 4)
+                    for i in range(yiyuan + 1):
+                        for j in range(liangyuan + 1):
+                            for o in range(wuyuan + 1):
+                                for p in range(shiyuan + 1):
+                                    if p * 10 + o * 5 + j * 2 + i * 1 == num1:
+                                        print("购买成功，一共找你%s元" %(num1))
+                                        shiyuan -= p
+                                        wuyuan -= o
+                                        liangyuan -= j
+                                        yiyuan -= i
+                                        exit(0)
+ 
+            if num > num_pijiu :
+                print ("抱歉，数量不够，请重新输入你要购买的数量！")
+        elif choice == '3' :
+            num = int(input("你好，奶茶一瓶五元，请输入你要购买的数量："))
+            if num <= num_naicha :
+                print ("你好，一共%s元。" %(num * 5 ))
+                money = int(input("请将钞票放入入钞口:"))
+                if money == (num * 5):
+                    num_naicha -= num
+                    print("购买成功，欢迎下次光临！")
+                elif money < (num * 5):
+                    num = int(input("请继续投入现金：")) + money
+                elif money > (num * 5):
+                    num1 = money - (num * 5)
+                    for i in range(yiyuan + 1):
+                        for j in range(liangyuan + 1):
+                            for o in range(wuyuan + 1):
+                                for p in range(shiyuan + 1):
+                                    if p * 10 + o * 5 + j * 2 + i * 1 == num1:
+                                        print("购买成功，一共找你%s元" % (num1))
+                                        shiyuan -= p
+                                        wuyuan -= o
+                                        liangyuan -= j
+                                        yiyuan -= i
+                                        exit(0)
+ 
+            if num > num_naicha :
+                print ("抱歉，数量不够，请重新输入你要购买的数量！")
+        elif choice == '4' :
+            num = int(input("你好，矿泉水一瓶两元，请输入你要购买的数量："))
+            if num <= num_kuangquanshui :
+                print ("你好，一共%s元。" %(num * 2 ))
+                money = int(input("请将钞票放入入钞口:"))
+                if money == (num * 2):
+                    num_kuangquanshui -= num
+                    print("购买成功，欢迎下次光临！")
+                elif money < (num * 2):
+                    num = int(input("请继续投入现金：")) + money
+                elif money > (num * 2):
+                    num1 = money - (num * 2)
+                    for i in range(yiyuan + 1):
+                        for j in range(liangyuan + 1):
+                            for o in range(wuyuan + 1):
+                                for p in range(shiyuan + 1):
+                                    if p * 10 + o * 5 + j * 2 + i * 1 == num1:
+                                        print("购买成功，一共找你%s元" % (num1))
+                                        shiyuan -= p
+                                        wuyuan -= o
+                                        liangyuan -= j
+                                        yiyuan -= i
+                                        exit(0)
+ 
+            if num > num_kuangquanshui :
+                print ("抱歉，数量不够，请重新输入你要购买的数量！")
+        elif choice == '5' :
+            num = int(input("你好，咖啡一瓶六元，请输入你要购买的数量："))
+            if num <= num_kafei :
+                print ("你好，一共%s元。" %(num * 6 ))
+                money = int(input("请将钞票放入入钞口:"))
+                if money == (num * 6):
+                    num_kafei -= num
+                    print("购买成功，欢迎下次光临！")
+                elif money < (num * 6):
+                    num = int(input("请继续投入现金：")) + money
+                elif money > (num * 6):
+                    num1 = money - (num * 6)
+                    for i in range(yiyuan + 1):
+                        for j in range(liangyuan + 1):
+                            for o in range(wuyuan + 1):
+                                for p in range(shiyuan + 1):
+                                    if p * 10 + o * 5 + j * 2 + i * 1 == num1:
+                                        print("购买成功，一共找你%s元" % (num1))
+                                        shiyuan -= p
+                                        wuyuan -= o
+                                        liangyuan -= j
+                                        yiyuan -= i
+                                        exit(0)
+ 
+            if num > num_kafei :
+                print ("抱歉，数量不够，请重新输入你要购买的数量！")
+        elif choice == '6' :
+            num = int(input("你好，牛奶一瓶五元，请输入你要购买的数量："))
+            if num <= num_niunai :
+                print ("你好，一共%s元。" %(num * 5 ))
+                money = int(input("请将钞票放入入钞口:"))
+                if money == (num * 5):
+                    num_niunai -= num
+                    print("购买成功，欢迎下次光临！")
+                elif money < (num * 5):
+                    num = int(input("请继续投入现金：")) + money
+                elif money > (num * 5):
+                    num1 = money - (num * 5)
+                    for i in range(yiyuan + 1):
+                        for j in range(liangyuan + 1):
+                            for o in range(wuyuan + 1):
+                                for p in range(shiyuan + 1):
+                                    if p * 10 + o * 5 + j * 2 + i * 1 == num1:
+                                        print("购买成功，一共找你%s元" % (num1))
+                                        shiyuan -= p
+                                        wuyuan -= o
+                                        liangyuan -= j
+                                        yiyuan -= i
+                                        exit(0)
+ 
+            if num > num_niunai :
+                print ("抱歉，数量不够，请重新输入你要购买的数量！")
+        else :
+            print("对不起，没有该商品！请重新输入！")
+    if choice == '2' :
+        X = input("""请输入你要查询的信息：
+    1).商品库存；
+    2).存钱盒信息
+    3).退出
+    请输入你需要的信息：""")
+        if X == '1' :
+            print ('可乐%s瓶,啤酒%s瓶，奶茶%s瓶，矿泉水%s瓶，咖啡%s瓶，牛奶%s瓶' %(num_kele,num_pijiu,num_naicha,num_kuangquanshui,num_kafei,num_niunai))
+        if X == '2' :
+            shiyuan = 100
+            wuyuan = 100
+            liangyuan = 100
+            yiyuan = 100
+            print ("十元%s张，五元%s张，两元%s张，一元%s张" %(shiyuan,wuyuan,liangyuan,yiyuan))
+        if X == '3' :
+            break
